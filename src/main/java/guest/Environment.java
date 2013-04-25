@@ -1,0 +1,54 @@
+package guest;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Environment implements Serializable{
+    private static final long serialVersionUID = 1L;
+    
+    @Id @GeneratedValue
+    Long envId;
+    private String envName;
+    private Boolean isActive;
+    private String envDesc;
+    
+    public Environment() {
+    }
+
+    @Override
+    public String toString() {
+	return "Environment [envId=" + envId + ", envName=" + envName
+		+ ", isActive=" + isActive + ", envDesc=" + envDesc + "]";
+    }
+
+    public String getEnvName() {
+        return envName;
+    }
+
+    public void setEnvName(String envName) {
+        this.envName = envName;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public String getEnvDesc() {
+        return envDesc;
+    }
+
+    public void setEnvDesc(String envDesc) {
+        this.envDesc = envDesc;
+    }
+    
+    
+
+}
